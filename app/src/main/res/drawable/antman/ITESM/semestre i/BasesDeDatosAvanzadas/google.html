@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Draw My Chart</title>
+    
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current',
+            {
+                'packages' : ['corechart']
+            }
+        );
+
+        google.charts.setOnLoadCallback(
+            drawMyChart
+        );
+         google.charts.setOnLoadCallback(
+            drawMyChart2
+        );
+
+        function drawMyChart(){
+            var queryString = encodeURIComponent('SELECT A,B, C LIMIT 20 OFFSET 1'); //Identify it, but not really locate data
+            var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1hIIcIqVyv60QkyC6eE6Yzx2J5_0D3_gE7428dgOly40/gviz/tq?sheet=Sheet1&headers=1&tq='+queryString);
+            query.setRefreshInterval(5);
+            query.send(handleTheResponse);
+        }
+        
+        function drawMyChart2(){
+            var queryString = encodeURIComponent('SELECT A,B, C LIMIT 20 OFFSET 1'); //Identify it, but not really locate data
+            var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1hIIcIqVyv60QkyC6eE6Yzx2J5_0D3_gE7428dgOly40/gviz/tq?sheet=Sheet1&headers=1&tq='+queryString);
+            query.setRefreshInterval(5);
+            query.send(handleTheResponse2);
+        }
+
+        function handleTheResponse(response){
+            if(response.isError()){
+                alert('Error in query: '+response.getMessage() + '' + response.getDetailedMessage());
+                return;
+            }
+
+            var data = response.getDataTable();
+            var chart = new google.visualization.AreaChart(document.getElementById('aabo'));
+            chart.draw(data,
+                {
+                    heigh:600,
+                    title:'SO SO SAD'
+                }
+            );
+        }
+    </script>
+</head>
+<body>
+        <div id="aabo">
+
+        </div>
+    <div id="aabo2"></div>
+</body>
+</html>

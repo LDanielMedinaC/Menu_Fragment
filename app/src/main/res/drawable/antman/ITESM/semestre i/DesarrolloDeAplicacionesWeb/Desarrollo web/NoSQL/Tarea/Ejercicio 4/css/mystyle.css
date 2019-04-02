@@ -1,0 +1,44 @@
+.blue {
+    background-color: #0781D4;
+}
+
+.red {
+    background-color: red;
+}
+.container{
+     margin:auto;
+    position:relative;
+    width: 500px;
+    height: 500px;
+    font-size:36px;
+    font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+    border-radius: 50%;
+}
+body{
+    text-align: center;
+}
+
+.hide {
+    visibility:hidden;
+}
+
+.inside{
+    position:absolute;
+    margin: 0;
+    padding: 0;
+    text-align:center;
+    width:400px;
+    left:60px;
+    top: 50%;
+    transform: translateY(-60%);
+}
+
+input{
+    box-sizing: border-box;
+    font-size: inherit;
+    font-family: inherit;
+    background-color: #2A9AD2;
+    border:none;
+    padding:0;
+    margin:0;
+}

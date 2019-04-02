@@ -64,16 +64,16 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 cambiaFragmento(IronManFragment(), R.id.container_fragment)
             }
             R.id.nav_gallery -> {
-
+                cambiaFragmento(AntMan(), R.id.container_fragment)
             }
             R.id.nav_slideshow -> {
-
+                cambiaFragmento(SpaindermanFragment(), R.id.container_fragment)
             }
             R.id.nav_manage -> {
-
+                cambiaFragmento(DrStrangeFragment(), R.id.container_fragment)
             }
             R.id.nav_share -> {
-
+                cambiaFragmento(ThorFragment(), R.id.container_fragment)
             }
             R.id.nav_send -> {
 
